@@ -27,9 +27,9 @@ async function accessSpreadsheet() {
 
     const rows = await sheet.getRows();
     // console.log(rows);
-    rows.forEach(row => {
-        console.log(row.MovieName);
-    })
+    // rows.forEach(row => {
+    //     console.log(row.MovieName);
+    // })
 
 
     // const cells = await sheet.loadCells({
@@ -52,4 +52,20 @@ accessSpreadsheet();
 
 
 //DISCORD BOT PROGRAMMED HERE
+
+
+// Require the necessary discord.js classes
+const { Client, Intents } = require('discord.js');
+
+// Create a new client instance
+const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+
+// When the client is ready, run this code (only once)
+client.once('ready', () => {
+	console.log('Ready!');
+});
+
+// Login to Discord with your client's token
+client.login(process.env.DISCORD_TOKEN);
+
 
